@@ -13,7 +13,7 @@ public class Customer {
 	private List<String> emails;
 	private Set<Long> phones;
 	private Map<String, Long> refs;
-	private Properties mypros;
+	private Properties myprops;
 	private Address address;
 	private List<Account> accounts;
 	public Customer(int cid, String cname, String email, Long phone) {
@@ -65,11 +65,11 @@ public class Customer {
 	public void setRefs(Map<String, Long> refs) {
 		this.refs = refs;
 	}
-	public Properties getMypros() {
-		return mypros;
+	public Properties getMyprops() {
+		return myprops;
 	}
-	public void setMypros(Properties mypros) {
-		this.mypros = mypros;
+	public void setMyprops(Properties mypros) {
+		this.myprops = mypros;
 	}
 	public Address getAddress() {
 		return address;
@@ -92,7 +92,7 @@ public class Customer {
 		System.out.println(emails);
 		System.out.println(phones);
 		System.out.println(refs);
-		System.out.println(mypros);
+		System.out.println(myprops);
 		System.out.println(address);
 		for(Account acc:accounts) {
 			System.out.println(acc);
@@ -100,6 +100,6 @@ public class Customer {
 		System.out.println(emails.getClass().getName());
 		System.out.println(phones.getClass().getName());
 		System.out.println(refs.getClass().getName());
-		System.out.println(mypros.getClass().getName());
+		System.out.println(myprops.getClass().getName());
 	}
 }
