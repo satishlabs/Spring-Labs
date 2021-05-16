@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:satish="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- bean definitions here -->
+	<bean id="aobj" class="com.satishlabs.A" satish:a="10" satish:msg="Hello Satish"/>
+	<bean id="bobj" class="com.satishlabs.B" satish:b="20" satish:str="Prasad"/>
+	<bean id="hello" class="com.satishlabs.Hello" satish:aobj-ref="aobj" satish:bobj-ref="bobj"/>
+</beans>
