@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<context:annotation-config />
+
+	<!-- bean definitions here -->
+	<bean class="org.springframework.beans.factory.config.CustomeEditorConfigurer">
+		<property name="customeEditors">
+			<map>
+			<entry key="com.satishlabs.spring.StudentId">
+			<value>com.satishlabs.spring.StudentIDEditor</value>
+			</entry>
+			<entry key="com.satishlabs.spring.Fee">
+			<value>com.satishlabs.spring.FeeEditor</value>
+			</entry>
+			<entry key="java.util.List">
+			<value>com.satishlabs.spring.ListEditor</value>
+			</entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="student" class="com.satishlabs.spring.Student">
+		<property name="sid" value="B99-101"/>
+		<property name="sname" value="Satish"/>
+		<property name="phone" value="9999"/>
+		<property name="fee" value="10000,5000,5000"/>
+		<property name="emails" value="satish@gmail.com, dhoni@gmail.com,virat@gmail.com"/>
+		<property name="phones">
+			<list>
+			<value>1111</value>
+			<value>2222</value>
+			<value>3333</value>
+		</list>
+		</property>
+	</bean>
+</beans>
