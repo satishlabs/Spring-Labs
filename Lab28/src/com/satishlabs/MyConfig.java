@@ -1,8 +1,10 @@
 package com.satishlabs;
 
+import org.springframework.config.java.annotation.Configuration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.Lazy;
 
+@Configuration
 public class MyConfig {
 	public MyConfig() {
 		System.out.println("Spring Container is now getting Ready");
@@ -14,7 +16,8 @@ public class MyConfig {
 	}
 	
 	@Bean(name = "hai")
-	@Scope("prototype")
+	@Lazy
+	
 	public Hai getHai() {
 		System.out.println("getHello()");
 		return new Hai();
