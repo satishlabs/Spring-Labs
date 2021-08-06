@@ -19,7 +19,7 @@
 	<bean id="mta" class="com.satishlabs.CMTAdvice"/>
 	
 	<bean id="as" class="com.satishlabs.AccountService"/>
-	<bean id="sc" class="com.satishlabs.CustomerServiceImpl"/>
+	<bean id="cs" class="com.satishlabs.CustomerServiceImpl"/>
 	
 	<bean id="PC1" class="org.springframework.aop.aspectj.AspectJExpressionPointcut">
 		<property name="expression" value="execution(*com.satishlabs.AccountService.my*(..))"/>
