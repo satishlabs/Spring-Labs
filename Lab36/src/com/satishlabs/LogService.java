@@ -13,7 +13,7 @@ public class LogService {
 	public void myc1() {
 		
 	}
-	@Pointcut(value = "execution(*com.satishlabs.AccountService.my*(..))")
+	@Pointcut(value = "execution(*com.satishlabs.AccountService.up*(..))")
 	public void myc2() {
 		
 	}
