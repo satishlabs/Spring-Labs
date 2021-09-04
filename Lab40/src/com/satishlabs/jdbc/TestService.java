@@ -24,4 +24,14 @@ public class TestService {
 			e.printStackTrace();
 		}
 	}
+	public void showMySQLInfo() {
+		try {
+			Connection sqlcon = mysqlDS.getConnection();
+			DatabaseMetaData sqldbmd = sqlcon.getMetaData();
+			System.out.println(sqldbmd.getDatabaseProductName());
+			System.out.println(sqldbmd.getDefaultTransactionIsolation());
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
