@@ -50,5 +50,7 @@
 	<classpathentry kind="lib" path="F:/New folder/JarFiles/springjars/springjars/jar/persistence.jar"/>
 	<classpathentry kind="lib" path="F:/New folder/JarFiles/springjars/springjars/jar/spring-javaconfig.jar"/>
 	<classpathentry kind="lib" path="F:/New folder/JarFiles/springjars/springjars/jar/xapool.jar"/>
+	<classpathentry kind="lib" path="F:/New folder/JarFiles/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="F:/New folder/JarFile/mysql-connector-java-5.1.6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
