@@ -16,5 +16,10 @@ public class Lab42 {
 		for(CustomerTO ct: list) {
 			System.out.println(ct);
 		}
+		
+		//2. Get Customer by CustomerId
+		System.out.println("Get Customer by CustomerId");
+		CustomerTO cto= cdao.getCustomerByCid(102);
+		System.out.println(cto);
 	}
 }

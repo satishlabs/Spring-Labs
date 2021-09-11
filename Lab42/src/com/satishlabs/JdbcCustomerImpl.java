@@ -17,4 +17,12 @@ public class JdbcCustomerImpl implements CustomerDAO {
 		return list;
 	}
 
+	@Override
+	public CustomerTO getCustomerByCid(int cid) {
+		String sql = "select * from customers where cid=?";
+		Object args[] = {cid};
+		CustomerTO cto = jdbcTemplate.queryForObject(sql, args, new CustomerRowMapper());
+		return cto;
+	}
+
 }
