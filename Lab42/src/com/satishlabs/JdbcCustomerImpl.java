@@ -27,32 +27,40 @@ public class JdbcCustomerImpl implements CustomerDAO {
 
 	@Override
 	public CustomerTO getCustomerByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
+	String sql = "select * from customers where email=?";
+	Object arsg[]= {email};
+	CustomerTO cto = jdbcTemplate.queryForObject(sql, arsg, new CustomerRowMapper());
+	return cto;
 	}
 
 	@Override
 	public List<CustomerTO> getCustomerByCity(String city) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * from customers where city=?";
+		Object arsg[]= {city};
+		List list= jdbcTemplate.query(sql, arsg, new CustomerRowMapper());
+		return list;
 	}
 
 	@Override
 	public int getCustomersCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "select count(*) from customers";
+		return jdbcTemplate.queryForInt(sql);
 	}
 
 	@Override
 	public String getCustomerCityByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select city from customers where email=?";
+		Object[] args= {email};
+		String city = jdbcTemplate.queryForObject(sql, args, String.class);
+		return city;
 	}
 
 	@Override
 	public Long getCustomerPhoneByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select phone from customers where email=?";
+		Object[] args= {email};
+		Long phone = jdbcTemplate.queryForObject(sql, args, Long.class);
+		return phone;
 	}
 
 }
