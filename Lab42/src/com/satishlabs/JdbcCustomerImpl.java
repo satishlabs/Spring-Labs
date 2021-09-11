@@ -25,4 +25,34 @@ public class JdbcCustomerImpl implements CustomerDAO {
 		return cto;
 	}
 
+	@Override
+	public CustomerTO getCustomerByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<CustomerTO> getCustomerByCity(String city) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getCustomersCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public String getCustomerCityByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Long getCustomerPhoneByEmail(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
