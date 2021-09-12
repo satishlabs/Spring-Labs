@@ -17,14 +17,16 @@ public class JdbcCustomerDAO implements CustomerDAO{
 
 	@Override
 	public void updateCustomer(CustomerTO cto) {
-		// TODO Auto-generated method stub
+		String sql ="update customers set name=?";
+		Object args[] = {cto.getCname()};
+		jdbcTemplate.update(sql, args);
 		
 	}
 
 	@Override
 	public void deleteCustomer(int cid) {
-		// TODO Auto-generated method stub
-		
+		String sql ="delete from customers where cid=?";
+		jdbcTemplate.update(sql, cid);
 	}
 
 }
