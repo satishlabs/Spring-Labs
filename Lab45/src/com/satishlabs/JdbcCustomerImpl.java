@@ -30,8 +30,16 @@ public class JdbcCustomerImpl extends JdbcDaoSupport implements CustomerDAO{
 
 	@Override
 	public List<CustomerTO> getAllCustomers() {
-		
-		return null;
+		PreparedStatementCreator psc = new PreparedStatementCreator() {
+			
+			@Override
+			public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
+				PreparedStatement ps = con.prepareStatement("select * from customers");
+				return ps;
+			}
+		};
+		List list = getJdbcTemplate().query(psc, new CustomerRowMapper());
+		return list;
 	}
 	
 }
