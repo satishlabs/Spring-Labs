@@ -21,5 +21,5 @@
 	
 	<bean id="jdbcTemp" class="org.springframework.jdbc.core.JdbcTemplate" autowire="constructor"/>
 	
-	<bean id="cdao" class="com.satishlabs.JdbcCustomerImpl"/>
+	<bean id="cdao" class="com.satishlabs.JdbcCustomerImpl" autowire="byType"/>
 </beans>
