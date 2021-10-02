@@ -45,7 +45,7 @@ public class JdbcCustomerDAOImpl implements CustomerDAO{
 
 	@Override
 	public void deleteCustomer(int cid) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 

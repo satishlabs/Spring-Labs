@@ -15,5 +15,8 @@ public class Lab47 {
 		//2. Update Customer
 		CustomerTO cto1=new CustomerTO(203, "PriyaC", "pc@gmail", 10201, "Jamshedpur");
 		cdao.updateCustomer(cto1);
+		
+		//3. delete Customer
+		cdao.deleteCustomer(102);
 	}
 }
