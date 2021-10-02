@@ -55,14 +55,18 @@ public class JdbcCustomerDAOImpl implements CustomerDAO{
 
 	@Override
 	public CustomerTO getCustomerByCid(int cid) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
 	@Override
 	public List<CustomerTO> getAllCustomers() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * from customers";
+		
+		Map<String, ?> map = null;
+		
+		List<CustomerTO> list = nameParameterJdbcTemp.query(sql, map, new CustomerRowMapper());
+		return list;
 	}
 
 }
