@@ -11,14 +11,17 @@ public class Lab47 {
 		CustomerDAO cdao = (CustomerDAO) ctx.getBean("cdao");
 		
 		//1. Add Customer
+		System.out.println("Add New Customer");
 		CustomerTO cto = new CustomerTO(401, "KumarTest", "kt@gmail", 98989, "Patna");
 		cdao.addCustomer(cto);
 		
 		//2. Update Customer
+		System.out.println("Update Customer by Cid");
 		CustomerTO cto1=new CustomerTO(203, "PriyaC", "pc@gmail", 10201, "Jamshedpur");
 		cdao.updateCustomer(cto1);
 		
 		//3. delete Customer
+		System.out.println("Delete Customer by Cid");
 		cdao.deleteCustomer(102);
 		
 		//4. Get All Customers
