@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 public class JdbcCustomerDAOImpl implements CustomerDAO{
 	
@@ -55,8 +57,12 @@ public class JdbcCustomerDAOImpl implements CustomerDAO{
 
 	@Override
 	public CustomerTO getCustomerByCid(int cid) {
+		String sql ="select * from customers where cid=:cid";
+		SqlParameterSource parameters = new MapSqlParameterSource("cid","cid");
 		
-		return null;
+		CustomerTO cto = nameParameterJdbcTemp.queryForObject(sql, parameters, new CustomerRowMapper());
+		
+		return cto;
 	}
 
 	@Override

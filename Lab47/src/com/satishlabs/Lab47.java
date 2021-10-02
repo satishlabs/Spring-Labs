@@ -27,5 +27,10 @@ public class Lab47 {
 		for(CustomerTO ct:list) {
 			System.out.println(ct);
 		}
+		
+		//5. Get Customer By Cid
+		System.out.println("Get Customers By Cid");
+		CustomerTO cto2 = cdao.getCustomerByCid(103);
+		System.out.println(cto2);
 	}
 }
