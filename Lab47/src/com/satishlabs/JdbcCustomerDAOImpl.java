@@ -45,8 +45,12 @@ public class JdbcCustomerDAOImpl implements CustomerDAO{
 
 	@Override
 	public void deleteCustomer(int cid) {
+		String sql = "delete from customers where cid=:cid";
 		
+		Map<String, Object> parameters = new HashMap<String, Object>();
+		parameters.put("cid", cid);
 		
+		nameParameterJdbcTemp.update(sql, parameters);
 	}
 
 	@Override
