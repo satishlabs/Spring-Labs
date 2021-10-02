@@ -11,5 +11,9 @@ public class Lab47 {
 		//1. Add Customer
 		CustomerTO cto = new CustomerTO(401, "KumarTest", "kt@gmail", 98989, "Patna");
 		cdao.addCustomer(cto);
+		
+		//2. Update Customer
+		CustomerTO cto1=new CustomerTO(203, "PriyaC", "pc@gmail", 10201, "Jamshedpur");
+		cdao.updateCustomer(cto1);
 	}
 }

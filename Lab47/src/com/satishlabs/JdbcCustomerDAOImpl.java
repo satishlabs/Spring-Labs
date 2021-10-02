@@ -29,7 +29,17 @@ public class JdbcCustomerDAOImpl implements CustomerDAO{
 
 	@Override
 	public void updateCustomer(CustomerTO cto) {
-		// TODO Auto-generated method stub
+		String sql = "update customers set cname=:cname,email=:email,phone=:phone,city=:city where cid=:cid";
+		
+		Map<String, Object> parameters = new HashMap<String, Object>();
+		
+		parameters.put("cname", cto.getCname());
+		parameters.put("email", cto.getEmail());
+		parameters.put("phone", cto.getPhone());
+		parameters.put("city", cto.getCity());
+		parameters.put("cid", cto.getCid());
+		
+		nameParameterJdbcTemp.update(sql, parameters);
 		
 	}
 
