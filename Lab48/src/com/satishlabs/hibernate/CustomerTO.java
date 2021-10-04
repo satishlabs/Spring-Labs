@@ -8,8 +8,21 @@ public class CustomerTO {
 	private String city;
 	
 	public CustomerTO() {}
+	
+	
+	
 	public CustomerTO(int cid, String cname, String email, long phone, String city) {
+		super();
 		this.cid = cid;
+		this.cname = cname;
+		this.email = email;
+		this.phone = phone;
+		this.city = city;
+	}
+
+
+
+	public CustomerTO(String cname, String email, long phone, String city) {
 		this.cname = cname;
 		this.email = email;
 		this.phone = phone;
