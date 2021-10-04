@@ -12,6 +12,17 @@ public class Lab48 {
 		CustomerTO cto = new CustomerTO(401, "Srini", "srini@gmail", 1234, "PU");
 		cdao.addCustomer(cto);
 		
+		//2. Update Customer
+		CustomerTO cto1 = new CustomerTO(203, "Srini", "srini@gmail", 1234, "PU");
+		cdao.updateCustomer(cto1);
+		
+		//3. delete Customer
+		cdao.deleteCustomer(206);
+		
+		//4. Get Customer By Cid
+		System.out.println("Get Customer by Cid");
+		cto = cdao.getCustomerByCid(301);
+		System.out.println(cto);
 		
 	}
 }
