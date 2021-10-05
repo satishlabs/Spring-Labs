@@ -17,7 +17,7 @@ public class Lab48 {
 		cdao.updateCustomer(cto1);
 		
 		//3. delete Customer
-		cdao.deleteCustomer(206);
+		cdao.deleteCustomer(206); 
 		
 		//4. Get Customer By Cid
 		System.out.println("Get Customer by Cid");
