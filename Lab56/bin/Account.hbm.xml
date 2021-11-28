@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-mapping package="com.satishlabs">
+	<class name="Account" table="accounts">
+		<id name="accno" column="accno" type="int">
+		<generator class="increment"/>
+		</id>
+		<property name="acctype"/>
+		<property name="balance" type="double"/>
+	</class>
+</hibernate-mapping>
