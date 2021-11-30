@@ -32,7 +32,25 @@ public class HibernateAccountDAO implements AccountDAO{
 
 	@Override
 	public void fundsTransfer(int accno, int daccno, double amt) {
-		// TODO Auto-generated method stub
+		TransactionDefinition txDef = new DefaultTransactionDefinition();
+		TransactionStatus ts = txManager.getTransaction(txDef);
+		
+		try {
+			Account acc1 = hibernateTemp.load(Account.class, daccno, LockMode.READ);
+			acc1.setBalance(acc1.getBalance()+amt);
+			
+			Account acc2 = hibernateTemp.load(Account.class, accno, LockMode.READ);
+			double scbal = acc2.getBalance();
+			if(scbal >= 500+amt) {
+				acc2.setBalance(scbal-amt);
+				hibernateTemp.update(acc2);
+			}else {
+				throw new InSufficientFundsException();
+			}
+			txManager.commit(ts);
+		}catch (Exception e) {
+			txManager.rollback(ts);
+		}
 		
 	}
 
