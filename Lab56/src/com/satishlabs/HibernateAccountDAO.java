@@ -38,8 +38,10 @@ public class HibernateAccountDAO implements AccountDAO{
 
 	@Override
 	public double getBalance(int accno) {
-		// TODO Auto-generated method stub
-		return 0;
+		System.out.println(hibernateTemp);
+		Account acc = hibernateTemp.load(Account.class, accno, LockMode.READ);
+		double cbal = acc.getBalance();
+		return cbal;
 	}
 
 }

@@ -13,5 +13,9 @@ public class Lab56 {
 		
 		//1. deposit
 		adao.deposit(101, 20000.0);
+		
+		//3. get Balance
+		System.out.println(adao.getBalance(101));
+		System.out.println(adao.getBalance(102));
 	}
 }
