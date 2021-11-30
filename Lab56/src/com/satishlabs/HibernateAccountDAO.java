@@ -26,8 +26,18 @@ public class HibernateAccountDAO implements AccountDAO{
 
 	@Override
 	public void withdraw(int accno, double amt) {
-		// TODO Auto-generated method stub
+		TransactionDefinition txDef = new DefaultTransactionDefinition();
+		TransactionStatus ts = txManager.getTransaction(txDef);
 		
+		Account acc = hibernateTemp.load(Account.class, accno, LockMode.READ);
+		double cbal = acc.getBalance();
+		if(cbal >= 5000+amt) {
+			acc.setBalance(cbal-amt);
+			hibernateTemp.update(acc);
+		}else {
+			throw new InSufficientFundsException();
+		}
+		txManager.commit(ts);
 	}
 
 	@Override
